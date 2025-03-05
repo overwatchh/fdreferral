@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FAQs from "./components/FAQs";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="bg-red-600 p-3">
+        <div className="text-white text-center">
+          <p className="text-4xl">Sign-up in minutes, earn within days.</p>
+          <p className="text-base mt-4">
+            Deliver with DoorDash and get more opportunities to earn
+          </p>
+        </div>
+      </div>
+
+      <FAQs />
     </div>
   );
 }
