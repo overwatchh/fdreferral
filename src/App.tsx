@@ -51,7 +51,7 @@ function App() {
         </h2>
 
         <div className="mt-8 text-center">
-          <img src={basepayImg} alt="Base pay image" />
+          <img src={basepayImg} alt="Base pay" />
 
           <p className="mt-4 text-lg neutral-900 font-bold">Base pay</p>
           <p className="mt-4 text-base neutral-900">
@@ -62,13 +62,64 @@ function App() {
         </div>
 
         <div className="mt-8 text-center">
-          <img src={promotionImg} alt="Base pay image" />
+          <img src={promotionImg} alt="Base pay" />
 
           <p className="mt-4 text-lg neutral-900 font-bold">Plus promotion</p>
           <p className="mt-4 text-base neutral-900">
             Promotions like Peak Pay, Challenges, and Delivery Streaks help you
             earn more.
           </p>
+        </div>
+      </div>
+      {/* Gear */}
+      {/* Testimony */}
+      <div className="bg-rose-50 px-4 pb-16 mt-20">
+        <img src={testimonyImg} alt="Testimony description" />
+
+        <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
+          Dasher Gear
+        </p>
+
+        <p className="mt-4 text-base neutral-900">
+          Since no two people have the same taste in gear, there’s an online
+          store so you can get the gear and equipment you want, at less than
+          retail. Access items like a hot bag, bike safety kit and mask for
+          Dasher safety.
+        </p>
+      </div>
+      {/* Requirements */}
+      <div className="mt-12">
+        <h1 className="text-center text-3xl font-bold">Requirements</h1>
+        <div className="flex flex-col space-y-8 mt-8">
+          <div className="flex flex-col items-center">
+            <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
+              1
+            </span>
+            <p className="text-lg font-bold mt-2">Age</p>
+            <p className="mt-3">Dashers must be 18 years or older </p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
+              2
+            </span>
+            <p className="text-lg font-bold mt-2">Vehicle</p>
+            <p className="mt-3">
+              Any car, scooter or bicycle. No car or bike?{" "}
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
+              3
+            </span>
+            <p className="text-lg font-bold mt-2">Documentation</p>
+            <p className="mt-3">
+              An Australian Business number (ABN), consent to a FREE background
+              check and have rights to work in Australia. A full open Australian
+              license is optional to access certain offers.{" "}
+            </p>
+          </div>
         </div>
       </div>
       {/* FAQ   */}
