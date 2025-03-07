@@ -1,8 +1,8 @@
-import FAQs from "./components/FAQs";
+import FAQ from "./components/FAQ";
 import testimonyImg from "./images/dx-zoomo-au.jpg";
 import basepayImg from "./images/basepay.webp";
 import promotionImg from "./images/promotion.webp";
-import { reasons } from "./content";
+import { faqs, reasons } from "./content";
 import DoorDash from "./components/icons/DoorDash";
 
 function App() {
@@ -90,7 +90,7 @@ function App() {
       {/* Requirements */}
       <div className="mt-12">
         <h1 className="text-center text-3xl font-bold">Requirements</h1>
-        <div className="flex flex-col space-y-8 mt-8">
+        <div className="flex flex-col space-y-8 mt-8 px-4">
           <div className="flex flex-col items-center">
             <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
               1
@@ -123,7 +123,21 @@ function App() {
         </div>
       </div>
       {/* FAQ   */}
-      <FAQs />
+      <div>
+        <div className="mt-12">
+          <h1 className="text-center text-3xl font-bold">
+            Frequently asked <br /> questions
+          </h1>
+        </div>
+
+        <div className="mt-8">
+          {faqs.map((faq) => (
+            <div className="border-b border-gray-300 last:border-b-0 px-4 py-2">
+              <FAQ question={faq.question} answer={faq.answer} />
+            </div>
+          ))}
+        </div>
+      </div>
       {/* Footer */}
       <div>
         <a
