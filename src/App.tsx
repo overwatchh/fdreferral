@@ -3,11 +3,11 @@ import testimonyImg from "./images/dx-zoomo-au.jpg";
 import basepayImg from "./images/basepay.webp";
 import promotionImg from "./images/promotion.webp";
 import { faqs, reasons } from "./content";
-import DoorDash from "./components/icons/DoorDash";
-
+import Facebook from "./components/icons/Facebook";
+import { ContactForm } from "./components/ContactForm";
 function App() {
   return (
-    <div>
+    <div className="md:container md:mx-auto">
       <div className="bg-red-600 p-3">
         <div className="text-white text-center">
           <p className="text-4xl">Sign-up in minutes, earn within days.</p>
@@ -45,7 +45,7 @@ function App() {
         </div>
       </div>
       {/* How much can I earn ? */}
-      <div className="mt-12">
+      <div className="mt-12 px-4">
         <h2 className="text-center text-3xl font-bold">
           How much can I earn ?
         </h2>
@@ -72,7 +72,6 @@ function App() {
         </div>
       </div>
       {/* Gear */}
-      {/* Testimony */}
       <div className="bg-rose-50 px-4 pb-16 mt-20">
         <img src={testimonyImg} alt="Testimony description" />
 
@@ -138,13 +137,29 @@ function App() {
           ))}
         </div>
       </div>
+      {/* Contact Form */}
+      <div className="bg-rose-50 px-4 pb-16 mt-20">
+        <img src={testimonyImg} alt="Testimony description" />
+
+        <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
+          Ready to earn ?
+        </p>
+
+        <p className="mt-4 text-base neutral-900">
+          Fill in your information below to get started with DoorDash and unlock
+          more earning opportunities.
+        </p>
+
+        <ContactForm />
+      </div>
+
       {/* Footer */}
       <div>
         <a
-          className="flex items-center justify-center bg-red-600 text-white py-4"
+          className="flex items-center justify-center bg-blue-600 text-white py-4"
           href="https://www.facebook.com/people/Australia-Food-Delivery-Referral-Program/61573376661936/"
         >
-          <DoorDash className="fill-white" />{" "}
+          <Facebook className="fill-white" />{" "}
           <span className="uppercase font-bold">Referral Program</span>
         </a>
       </div>
