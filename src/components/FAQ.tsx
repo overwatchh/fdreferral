@@ -1,18 +1,19 @@
 import { useState } from "react";
 import ArrowDown from "./icons/ArrowDown";
 import classNames from "classnames";
-
+import { logEvent, analytics } from "../firebaseConfig";
 const FAQ: React.FC<{ question: string; answer: string }> = ({
   question,
   answer,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    logEvent(analytics, "faq_clicked", { question });
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
-      <div
-        className="flex items-center justify-between"
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <div className="flex items-center justify-between" onClick={handleClick}>
         <p
           className={classNames("text-lg font-semibold", {
             "text-red-600": isOpen,
