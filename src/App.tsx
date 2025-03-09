@@ -5,7 +5,14 @@ import promotionImg from "./images/promotion.webp";
 import { faqs, reasons } from "./content";
 import Facebook from "./components/icons/Facebook";
 import { ContactForm } from "./components/ContactForm";
+import useTrackPageView from "./hooks/useTrackPageView";
+import useSectionTracking from "./hooks/useSectionTracking";
 function App() {
+  const howMuchEarnRef = useSectionTracking("how_much_earn");
+  const requirementsRef = useSectionTracking("requirements");
+  const faqRef = useSectionTracking("faq");
+  const contactRef = useSectionTracking("contact");
+  useTrackPageView();
   return (
     <div className="md:container md:mx-auto">
       <div className="bg-red-600 p-3">
@@ -45,7 +52,7 @@ function App() {
         </div>
       </div>
       {/* How much can I earn ? */}
-      <div className="mt-12 px-4">
+      <div ref={howMuchEarnRef} className="mt-12 px-4">
         <h2 className="text-center text-3xl font-bold">
           How much can I earn ?
         </h2>
@@ -87,7 +94,7 @@ function App() {
         </p>
       </div>
       {/* Requirements */}
-      <div className="mt-12">
+      <div ref={requirementsRef} className="mt-12">
         <h1 className="text-center text-3xl font-bold">Requirements</h1>
         <div className="flex flex-col space-y-8 mt-8 px-4">
           <div className="flex flex-col items-center">
@@ -122,7 +129,7 @@ function App() {
         </div>
       </div>
       {/* FAQ   */}
-      <div>
+      <div ref={faqRef}>
         <div className="mt-12">
           <h1 className="text-center text-3xl font-bold">
             Frequently asked <br /> questions
@@ -138,7 +145,7 @@ function App() {
         </div>
       </div>
       {/* Contact Form */}
-      <div className="bg-rose-50 px-4 pb-16 mt-20">
+      <div ref={contactRef} className="bg-rose-50 px-4 pb-16 mt-20">
         <img src={testimonyImg} alt="Testimony description" />
 
         <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
