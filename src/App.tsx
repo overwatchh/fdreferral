@@ -14,7 +14,7 @@ function App() {
   const contactRef = useSectionTracking("contact");
   useTrackPageView();
   return (
-    <div className="md:container md:mx-auto">
+    <div className="">
       <div className="bg-red-600 p-3">
         <div className="text-white text-center">
           <p className="text-4xl">Sign-up in minutes, earn within days.</p>
@@ -24,9 +24,9 @@ function App() {
         </div>
       </div>
       {/* Why join ?*/}
-      <div className="pt-8 flex flex-col space-y-12">
-        {reasons.map((reason) => (
-          <div className="flex flex-col items-center">
+      <div className="pt-8 flex flex-col space-y-10 md:flex-row md:items-end md:space-y-0 xl:container xl:mx-auto">
+        {reasons.map((reason, index) => (
+          <div className="flex flex-col items-center" key={index}>
             <span className="text-red-600">{reason.icon}</span>
             <p className="text-lg text-neutral-950 font-bold mt-4">
               {reason.title}
@@ -38,66 +38,79 @@ function App() {
         ))}
       </div>
       {/* Testimony */}
-      <div className="bg-rose-50 px-4 pb-16 mt-20">
-        <img src={testimonyImg} alt="Testimony description" />
+      <div className="bg-rose-50 px-4 pb-16 mt-20 md:flex md:flex-row xl:ml-60">
+        <img
+          className="md:block md:w-96 md:h-96"
+          src={testimonyImg}
+          alt="Testimony description"
+        />
+        <div className="md:p-6 md:flex md:flex-col md:items-start justify-center md:px-12 xl:mr-60">
+          <p className="text-neutral-900 font-bold text-2xl mt-6">
+            “The best part is the flexibility of work hours. Being able to
+            decide my own schedule is such a wonderful opportunity.”
+          </p>
 
-        <p className="text-neutral-900 font-bold text-2xl mt-6">
-          “The best part is the flexibility of work hours. Being able to decide
-          my own schedule is such a wonderful opportunity.”
-        </p>
-
-        <div className="text-center mt-4 text-lg font-medium neutral-800">
-          <p>Emily</p>
-          <p>Earned AU$1500 per week</p>
+          <div className="text-center mt-4 text-lg font-medium neutral-800 md:text-start">
+            <p>Emily</p>
+            <p>Earned AU$1500 per week</p>
+          </div>
         </div>
       </div>
       {/* How much can I earn ? */}
-      <div ref={howMuchEarnRef} className="mt-12 px-4">
-        <h2 className="text-center text-3xl font-bold">
+      <div ref={howMuchEarnRef} className="mt-12 px-4 xl:container xl:mx-auto">
+        <h2 className="text-center text-3xl font-bold md:text-4xl">
           How much can I earn ?
         </h2>
+        <div className="md:flex md:flex-row md:space-x-4">
+          <div className="mt-8 text-center">
+            <img src={basepayImg} alt="Base pay" />
 
-        <div className="mt-8 text-center">
-          <img src={basepayImg} alt="Base pay" />
+            <p className="mt-4 text-lg neutral-900 font-bold">Base pay</p>
+            <p className="mt-4 text-base neutral-900">
+              You’ll always earn <span>Base Pay</span> for any offer accepted on
+              DoorDash. Base Pay is calculated based on the estimated time,
+              distance, and desirability of the offer.
+            </p>
+          </div>
 
-          <p className="mt-4 text-lg neutral-900 font-bold">Base pay</p>
-          <p className="mt-4 text-base neutral-900">
-            You’ll always earn <span>Base Pay</span> for any offer accepted on
-            DoorDash. Base Pay is calculated based on the estimated time,
-            distance, and desirability of the offer.
-          </p>
-        </div>
+          <div className="mt-8 text-center">
+            <img src={promotionImg} alt="Base pay" />
 
-        <div className="mt-8 text-center">
-          <img src={promotionImg} alt="Base pay" />
-
-          <p className="mt-4 text-lg neutral-900 font-bold">Plus promotion</p>
-          <p className="mt-4 text-base neutral-900">
-            Promotions like Peak Pay, Challenges, and Delivery Streaks help you
-            earn more.
-          </p>
+            <p className="mt-4 text-lg neutral-900 font-bold">Plus promotion</p>
+            <p className="mt-4 text-base neutral-900">
+              Promotions like Peak Pay, Challenges, and Delivery Streaks help
+              you earn more.
+            </p>
+          </div>
         </div>
       </div>
       {/* Gear */}
-      <div className="bg-rose-50 px-4 pb-16 mt-20">
-        <img src={testimonyImg} alt="Testimony description" />
+      <div className="bg-rose-50 px-4 pb-16 mt-20 md:flex md:flex-row-reverse xl:mr-60">
+        <img
+          className="md:w-96 md:h-96"
+          src={testimonyImg}
+          alt="Testimony description"
+        />
+        <div className="md:flex md:flex-col md:items-start justify-center md:px-12 xl:ml-60">
+          <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
+            Dasher Gear
+          </p>
 
-        <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
-          Dasher Gear
-        </p>
-
-        <p className="mt-4 text-base neutral-900">
-          Since no two people have the same taste in gear, there’s an online
-          store so you can get the gear and equipment you want, at less than
-          retail. Access items like a hot bag, bike safety kit and mask for
-          Dasher safety.
-        </p>
+          <p className="mt-4 text-base neutral-900 xl:mr-60">
+            Since no two people have the same taste in gear, there’s an online
+            store so you can get the gear and equipment you want, at less than
+            retail. Access items like a hot bag, bike safety kit and mask for
+            Dasher safety.
+          </p>
+        </div>
       </div>
       {/* Requirements */}
-      <div ref={requirementsRef} className="mt-12">
-        <h1 className="text-center text-3xl font-bold">Requirements</h1>
-        <div className="flex flex-col space-y-8 mt-8 px-4">
-          <div className="flex flex-col items-center">
+      <div ref={requirementsRef} className="mt-12 xl:container xl:mx-auto">
+        <h1 className="text-center text-3xl font-bold md:text-4xl">
+          Requirements
+        </h1>
+        <div className="flex flex-col space-y-8 mt-8 px-4 md:flex md:flex-row md:space-x-4 md:items-start md:space-y-0">
+          <div className="flex flex-col items-center md:flex-1">
             <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
               1
             </span>
@@ -105,7 +118,7 @@ function App() {
             <p className="mt-3">Dashers must be 18 years or older </p>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:flex-1">
             <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
               2
             </span>
@@ -115,7 +128,7 @@ function App() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:flex-1">
             <span className="flex justify-center items-center rounded-[50%] h-10 w-10 bg-red-600 text-white text-lg font-bold">
               3
             </span>
@@ -129,7 +142,10 @@ function App() {
         </div>
       </div>
       {/* FAQ   */}
-      <div ref={faqRef}>
+      <div
+        ref={faqRef}
+        className="lg:container lg:mx-auto xl:container xl:mx-auto"
+      >
         <div className="mt-12">
           <h1 className="text-center text-3xl font-bold">
             Frequently asked <br /> questions
@@ -145,19 +161,27 @@ function App() {
         </div>
       </div>
       {/* Contact Form */}
-      <div ref={contactRef} className="bg-rose-50 px-4 pb-16 mt-20">
-        <img src={testimonyImg} alt="Testimony description" />
+      <div
+        ref={contactRef}
+        className="bg-rose-50 px-4 pb-16 mt-20 md:flex md:flex-row md:items-start md:justify-start md:space-x-12 xl:ml-60"
+      >
+        <img
+          className="md:block md:w-96 md:h-96"
+          src={testimonyImg}
+          alt="Testimony description"
+        />
+        <div>
+          <p className="text-center text-neutral-900 font-bold text-2xl mt-6 md:text-start">
+            Ready to earn ?
+          </p>
 
-        <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
-          Ready to earn ?
-        </p>
+          <p className="mt-4 text-base neutral-900">
+            Fill in your information below to get started with DoorDash and
+            unlock more earning opportunities.
+          </p>
 
-        <p className="mt-4 text-base neutral-900">
-          Fill in your information below to get started with DoorDash and unlock
-          more earning opportunities.
-        </p>
-
-        <ContactForm />
+          <ContactForm />
+        </div>
       </div>
 
       {/* Footer */}
