@@ -1,3 +1,16 @@
 # https://www.robotstxt.org/robotstxt.html
+# Allow all search engines to index the site
 User-agent: *
+Disallow:
+
+# Allow Googlebot to crawl everything
+User-agent: Googlebot
+Disallow:
+
+# Allow Bingbot to crawl everything
+User-agent: Bingbot
+Disallow:
+
+# Allow Yandex to crawl everything
+User-agent: Yandex
 Disallow:

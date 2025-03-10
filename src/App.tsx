@@ -176,8 +176,8 @@ function App() {
           </p>
 
           <p className="mt-4 text-base neutral-900">
-            Fill in your information below to get started with DoorDash and
-            unlock more earning opportunities.
+            Fill in your information here. We will send you the referral link
+            and our support team of experienced drivers will have your back.
           </p>
 
           <ContactForm />
