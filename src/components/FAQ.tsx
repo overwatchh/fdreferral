@@ -13,7 +13,10 @@ const FAQ: React.FC<{ question: string; answer: string }> = ({
   };
   return (
     <div>
-      <div className="flex items-center justify-between" onClick={handleClick}>
+      <div
+        className="flex items-center justify-between  hover:cursor-pointer hover:bg-rose-50"
+        onClick={handleClick}
+      >
         <p
           className={classNames("text-lg font-semibold", {
             "text-red-600": isOpen,

@@ -17,21 +17,22 @@ function App() {
     <div className="">
       <div className="bg-red-600 p-3">
         <div className="text-white text-center">
-          <p className="text-4xl">Sign-up in minutes, earn within days.</p>
+          <p className="text-4xl">Be referred and earn an extra 💵 AU$400.</p>
           <p className="text-base mt-4">
-            Deliver with DoorDash and get more opportunities to earn
+            🔗 Sign up using a referral link and 💰 earn extra money. Why not?
+            ✨
           </p>
         </div>
       </div>
       {/* Why join ?*/}
-      <div className="pt-8 flex flex-col space-y-10 md:flex-row md:items-end md:space-y-0 xl:container xl:mx-auto">
+      <div className="pt-8 flex flex-col space-y-10 md:flex-row md:items-start md:space-y-0 xl:container xl:mx-auto">
         {reasons.map((reason, index) => (
-          <div className="flex flex-col items-center" key={index}>
+          <div className="flex flex-col items-center md:flex-1" key={index}>
             <span className="text-red-600">{reason.icon}</span>
             <p className="text-lg text-neutral-950 font-bold mt-4">
               {reason.title}
             </p>
-            <p className="text-base text-neutral-950 text-center mt-3 mx-12">
+            <p className="text-base text-neutral-950 text-center mt-3 mx-12 md:mx-2">
               {reason.description}
             </p>
           </div>
@@ -46,40 +47,43 @@ function App() {
         />
         <div className="md:p-6 md:flex md:flex-col md:items-start justify-center md:px-12 xl:mr-60">
           <p className="text-neutral-900 font-bold text-2xl mt-6">
-            “The best part is the flexibility of work hours. Being able to
-            decide my own schedule is such a wonderful opportunity.”
+            “I accidentally found this referral website on Google when I was
+            searching for food delivery. I earned an unimaginable amount of
+            money that week. The support team from the Referral Program was very
+            helpful, as they are experienced delivery drivers who assisted me
+            with the onboarding process and answered all my questions.”
           </p>
 
           <div className="text-center mt-4 text-lg font-medium neutral-800 md:text-start">
-            <p>Emily</p>
-            <p>Earned AU$1500 per week</p>
+            <p>Dang</p>
+            <p>Earned AU$1500 for 40 hours working with referral bonus</p>
           </div>
         </div>
       </div>
       {/* How much can I earn ? */}
       <div ref={howMuchEarnRef} className="mt-12 px-4 xl:container xl:mx-auto">
         <h2 className="text-center text-3xl font-bold md:text-4xl">
-          How much can I earn ?
+          How much can I earn exactly 🤔?
         </h2>
-        <div className="md:flex md:flex-row md:space-x-4">
-          <div className="mt-8 text-center">
-            <img src={basepayImg} alt="Base pay" />
+        <div className="md:flex md:flex-row md:space-x-4 md:justify-center">
+          <div className="mt-8 text-center md:flex-1">
+            <img className="md:h-96" src={basepayImg} alt="Base pay" />
 
-            <p className="mt-4 text-lg neutral-900 font-bold">Base pay</p>
+            <p className="mt-4 text-lg neutral-900 font-bold">Normal pay</p>
             <p className="mt-4 text-base neutral-900">
-              You’ll always earn <span>Base Pay</span> for any offer accepted on
-              DoorDash. Base Pay is calculated based on the estimated time,
-              distance, and desirability of the offer.
+              The normal pay from DoorDash includes base pay, which is about
+              AU$5–AU$8 per trip, along with customer tips and promotions during
+              peak hours. In short, it’s about AU$25–AU$30 per hour.
             </p>
           </div>
 
-          <div className="mt-8 text-center">
-            <img src={promotionImg} alt="Base pay" />
+          <div className="mt-8 text-center md:flex-1">
+            <img className="md:h-96" src={promotionImg} alt="Base pay" />
 
-            <p className="mt-4 text-lg neutral-900 font-bold">Plus promotion</p>
+            <p className="mt-4 text-lg neutral-900 font-bold">Referral Bonus</p>
             <p className="mt-4 text-base neutral-900">
-              Promotions like Peak Pay, Challenges, and Delivery Streaks help
-              you earn more.
+              Earn a referral bonus of AU$400—equivalent to more than 10 hours
+              of working on the road.
             </p>
           </div>
         </div>
@@ -93,14 +97,13 @@ function App() {
         />
         <div className="md:flex md:flex-col md:items-start justify-center md:px-12 xl:ml-60">
           <p className="text-center text-neutral-900 font-bold text-2xl mt-6">
-            Dasher Gear
+            How to Get Started
           </p>
 
           <p className="mt-4 text-base neutral-900 xl:mr-60">
-            Since no two people have the same taste in gear, there’s an online
-            store so you can get the gear and equipment you want, at less than
-            retail. Access items like a hot bag, bike safety kit and mask for
-            Dasher safety.
+            Sounds good! But, how can I get started? I don't know what to do. Do
+            I need a bike or something? I don’t even have a bike. At the very
+            least, what documents do I need?
           </p>
         </div>
       </div>
@@ -123,9 +126,7 @@ function App() {
               2
             </span>
             <p className="text-lg font-bold mt-2">Vehicle</p>
-            <p className="mt-3">
-              Any car, scooter or bicycle. No car or bike?{" "}
-            </p>
+            <p className="mt-3">Any car, scooter or bicycle.</p>
           </div>
 
           <div className="flex flex-col items-center md:flex-1">
@@ -134,9 +135,8 @@ function App() {
             </span>
             <p className="text-lg font-bold mt-2">Documentation</p>
             <p className="mt-3">
-              An Australian Business number (ABN), consent to a FREE background
-              check and have rights to work in Australia. A full open Australian
-              license is optional to access certain offers.{" "}
+              You must have the right visa, TFN, ABN, and a police background
+              check to be eligible to become a Dasher.
             </p>
           </div>
         </div>
