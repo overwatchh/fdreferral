@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addContact } from "../services/contactService";
 import classNames from "classnames";
+import { analytics, logEvent } from "../firebaseConfig"; // Import analytics
 
 export const ContactForm = () => {
   const [form, setForm] = useState({
@@ -25,6 +26,12 @@ export const ContactForm = () => {
       await addContact(form);
       setIsSubmitted(true);
       setIsSubmitting(false);
+      // Track event after successful submission
+      logEvent(analytics, "contact_form_submission", {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+      });
     } catch (err) {
       setError("Failed to save contact. Please try again.");
       setIsSubmitting(false);
